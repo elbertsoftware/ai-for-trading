@@ -1,0 +1,22 @@
+# Create new environment:
+
+conda create -n udacity_ai_trading python=3.6.13
+
+conda activate udacity_ai_trading
+conda remove --name udacity_ai_trading --all
+
+conda install ipykernel
+conda install notebook 
+jupyter --version
+
+# Add new Jupyter kernel:
+
+python3 -m ipykernel install --user --name udacity_ai_trading --display-name "Python3 (udacity_ai_trading)"
+
+# List existing kernels:
+
+jupyter kernelspec list
+
+# Remove existing kernel:
+
+jupyter kernelspec remove <kernel-nam
