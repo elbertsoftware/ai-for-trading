@@ -1,3 +1,10 @@
+# Pandas provides built-in exponentially weighted moving window functions with the .ewm method.
+# Consider using .ewm().mean(), and be sure to properly specify the alpha parameter
+# (hint: it is related to, but not equal to λ).
+#
+# Note that .ewm().std() and .ewm().var() implement ewmvar(x) = ewma(x**2) - ewma(x)**2,
+# which is slightly different than what you'll want to implement for this problem.
+
 import pandas as pd
 import numpy as np
 
