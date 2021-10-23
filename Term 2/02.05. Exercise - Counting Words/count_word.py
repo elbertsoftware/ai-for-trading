@@ -1,4 +1,5 @@
 """Count words."""
+import re
 
 
 def count_words(text):
@@ -6,11 +7,19 @@ def count_words(text):
     counts = dict()  # dictionary of { <word>: <count> } pairs to return
 
     # TODO: Convert to lowercase
+    text = text.lower()
 
     # TODO: Split text into tokens (words), leaving out punctuation
     # (Hint: Use regex to split on non-alphanumeric characters)
+    rgx = re.compile("(\w[\w']*\w|\w)")
+    words = rgx.findall(text)
 
     # TODO: Aggregate word counts using a dictionary
+    for word in words:
+        if counts.get(word) is None:
+            counts[word] = 1
+        else:
+            counts[word] += 1
 
     return counts
 
