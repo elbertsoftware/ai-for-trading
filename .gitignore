@@ -140,3 +140,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+Term 2/10. Deep Learning with PyTorch/checkpoint.pth
+Term 2/10. Deep Learning with PyTorch/Cat_Dog_data
