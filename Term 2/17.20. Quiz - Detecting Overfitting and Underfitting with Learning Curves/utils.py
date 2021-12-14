@@ -1,17 +1,13 @@
 from sklearn.model_selection import learning_curve
 
 # It is good to randomize the data before drawing Learning Curves
-
-
 def randomize(X, Y):
     permutation = np.random.permutation(Y.shape[0])
-    X2 = X[permutation, :]
+    X2 = X[permutation,:]
     Y2 = Y[permutation]
     return X2, Y2
 
-
 X2, y2 = randomize(X, y)
-
 
 def draw_learning_curves(X, y, estimator, num_trainings):
     train_sizes, train_scores, test_scores = learning_curve(
@@ -32,6 +28,7 @@ def draw_learning_curves(X, y, estimator, num_trainings):
              label="Training score")
     plt.plot(test_scores_mean, 'o-', color="y",
              label="Cross-validation score")
+
 
     plt.legend(loc="best")
 

@@ -1,28 +1,28 @@
 # Import, read, and split data
-from sklearn.svm import SVC
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
-import numpy as np
-import pandas as pd
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
+import pandas as pd
 data = pd.read_csv('data.csv')
+import numpy as np
 X = np.array(data[['x1', 'x2']])
 y = np.array(data['y'])
 
 # Fix random seed
 np.random.seed(55)
 
-# Imports
+### Imports
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.svm import SVC
 
 # TODO: Uncomment one of the three classifiers, and hit "Test Run"
 # to see the learning curve. Use these to answer the quiz below.
 
-# Logistic Regression
+### Logistic Regression => Underfits
 #estimator = LogisticRegression()
 
-# Decision Tree
-#estimator = GradientBoostingClassifier()
+### Decision Tree => Just right
+estimator = GradientBoostingClassifier()
 
-# Support Vector Machine
+### Support Vector Machine => Overfits
 #estimator = SVC(kernel='rbf', gamma=1000)
